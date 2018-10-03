@@ -1,0 +1,30 @@
+<section class="container">
+    <div class="row">
+        <div class="col-sm-2">
+            <img src="{{ image }}" alt="" class="img-fluid rounded-circle">
+        </div>
+        <div class="col-sm-10">
+            <h1> {{ name }} </h1>
+            <a href="{{ href }}">Ir a la página del artista</a>
+        </div>
+    </div>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Foto</th>
+                <th scope="col">Album</th>
+                <th scope="col">Canción</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let album of albums">
+                <td>
+                    <img [src]="album.images[2].url" [alt]="album.name">
+                </td>
+                <td>{{ album.album_group }}</td>
+                <td>{{ album.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
